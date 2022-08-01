@@ -1,37 +1,6 @@
-# Suborbital Code Editor
+import React from "react";
 
-This project allows you to embed the Suborbital code editor into your React application.
-
-## Setup
-
-Install the library:
-
-```sh
-npm install @suborbital/editor-react
-```
-
-Import the library:
-
-```ts
-import { Editor } from "@suborbital/editor-react";
-```
-
-Render the editor:
-
-```tsx
-<Editor
-  builder="https://mybuilder.com"
-  ident="com.acmeco.123"
-  functionName="myfunction"
-  token="4gSBo8miBWjwXg2rBGHk1tYa"
-  template="javascript"
-/>
-```
-
-You can find the full set of configuration options listed below:
-
-```ts
-interface EditorProps {
+export interface EditorProps {
   /** The public URL of your builder service */
   builder: string;
   /** The identifier used to address your specific user */
@@ -56,8 +25,21 @@ interface EditorProps {
     height?: number | string;
   };
 }
-```
 
-## Developing
+const DEFAULT_URL = "https://editor.suborbital.network/";
 
-After an initial `npm install`, build the project with `npm run rollup`. That's it!
+const Editor = (props: EditorProps) => {
+  return (
+    <iframe
+      src={`${props.options?.editorUrl || DEFAULT_URL}?builder=${
+        props.builder
+      }&token=${props.token}&ident=${props.ident}&namespace=${
+        props.namespace || "default"
+      }&fn=${props.functionName}&template=${props.template}`}
+      width={props.options?.width ?? "100%"}
+      height={props.options?.height ?? "100%"}
+    />
+  );
+};
+
+export default Editor;

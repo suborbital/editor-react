@@ -1,0 +1,35 @@
+{
+  "name": "@suborbital/editor-react",
+  "version": "0.0.0",
+  "description": "The Suborbital Compute code editor, embeddable as a React component.",
+  "scripts": {
+    "rollup": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suborbital/suborbital-editor-react.git"
+  },
+  "author": "team@suborbital.dev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/suborbital/suborbital-editor-react/issues"
+  },
+  "homepage": "https://github.com/suborbital/suborbital-editor-react#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.4",
+    "@types/react": "^18.0.15",
+    "react": "^18.2.0",
+    "rollup": "^2.77.2",
+    "rollup-plugin-dts": "^4.2.2",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.4"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts"
+}
