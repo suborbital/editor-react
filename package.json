@@ -1,6 +1,6 @@
 {
   "name": "@suborbital/editor-react",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "The Suborbital Compute code editor, embeddable as a React component.",
   "scripts": {
     "rollup": "rollup -c"
